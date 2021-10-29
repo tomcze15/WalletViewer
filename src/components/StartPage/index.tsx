@@ -3,7 +3,7 @@ import styled, { Keyframes, keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import COLORS from 'constants/colors';
-import { WalletIcon } from 'assets';
+import { WalletLogo } from 'assets';
 
 type DirectionType = 'left' | 'right';
 
@@ -42,7 +42,7 @@ const StartWrapper = styled.header`
   gap: 2.5rem;
 `;
 
-const Logo = styled(WalletIcon).attrs({
+const Logo = styled(WalletLogo).attrs({
   alt: 'SVG_LOGO_ALT',
 })`
   width: 8rem;

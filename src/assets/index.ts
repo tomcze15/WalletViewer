@@ -1,7 +1,7 @@
-import IconWhitePNG from 'assets/images/wallet_256.png';
-import { ReactComponent as WalletIcon } from 'assets/images/wallet-icon.svg';
+import { ReactComponent as WalletLogo } from 'assets/images/wallet-icon.svg';
+import { ReactComponent as Dashboard } from 'assets/images/dashboard.svg';
 
 export {
-  IconWhitePNG,
-  WalletIcon,
+  WalletLogo,
+  Dashboard,
 };
