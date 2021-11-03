@@ -24,7 +24,7 @@ const animatePosition = (direction?: DirectionType): Keyframes => (
     }
 
     100% {
-      opacity: translateX(0px);
+      transform: translateX(0px);
     }
   `
 );

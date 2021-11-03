@@ -1,14 +1,29 @@
-import { WalletLogo, Dashboard } from 'assets';
+import {
+  WalletLogo, Dashboard, Arrows, Charts, Settings,
+} from 'assets';
+
 import { IMenuItem } from 'common/types';
 
 export const MENU_ITEMS: IMenuItem[] = [
   {
     name: 'WalletViewer',
-    icon: WalletLogo,
+    Icon: WalletLogo,
   },
   {
     name: 'Dashboard',
-    icon: Dashboard,
+    Icon: Dashboard,
+  },
+  {
+    name: 'Charts',
+    Icon: Charts,
+  },
+  {
+    name: 'Settings',
+    Icon: Settings,
+  },
+  {
+    name: 'Arrows',
+    Icon: Arrows,
   },
 ];
 

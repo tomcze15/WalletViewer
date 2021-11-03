@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
   body {
-    height: calc(100vh - 2rem);
-    padding: 1rem;
+    height: 100vh;
   }
 `;

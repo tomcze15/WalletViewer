@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import 'normalize.css';
 
 import { LightTheme } from 'themes';
-import Menu from 'components/Menu';
 import GlobalStyle from 'components/GlobalStyle';
-import { MENU_ITEMS } from 'constants/items';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Layout from 'layout';
 
 const App = (): JSX.Element => {
   const [theme, setTheme] = useState(LightTheme);
@@ -13,7 +13,9 @@ const App = (): JSX.Element => {
   return (
     <ThemeProvider theme={{ ...theme }}>
       <GlobalStyle />
-      <Menu items={MENU_ITEMS} />
+      <Router>
+        <Layout />
+      </Router>
     </ThemeProvider>
   );
 };

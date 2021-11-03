@@ -2,4 +2,5 @@ export default {
   STARTPAGE_GRADIENT_START: '#668ec7',
   STARTPAGE_GRADIENT_END: '#9fb7d9',
   WHITE: '#FFFFFF',
+  SHADOW: '#CBCBCB',
 };
