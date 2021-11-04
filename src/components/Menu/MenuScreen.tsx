@@ -1,29 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import COLORS from 'constants/colors';
-import { IMenuProps } from 'common/types';
-
-const animateOpacity = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
-const animateRotate = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(180deg);
-  }
-`;
+import { IMenuItem, IMenuProps } from 'common/types';
 
 const MenuContainer = styled.header`
   position: fixed;
@@ -66,10 +46,13 @@ const MenuItem = styled.li`
   height: 6rem;
   width: 100%;
   padding-left: 2rem;
+  border-radius: 10px;
+  background-color: ${COLORS.STARTPAGE_GRADIENT_END};
+  transition: background-color 0.1s linear;
 
   &:hover {
     border-radius: 10px;
-    background: ${COLORS.STARTPAGE_GRADIENT_START};
+    background-color: ${COLORS.STARTPAGE_GRADIENT_START};
   }
 
   & svg {
@@ -81,6 +64,11 @@ const MenuItem = styled.li`
 
   &:first-child,
   &:last-child {
+    background-color: ${COLORS.STARTPAGE_GRADIENT_END};
+  }
+
+  &:first-child,
+  &:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,11 +76,6 @@ const MenuItem = styled.li`
     padding-left: 0;
     fill: ${COLORS.WHITE};
     color: ${COLORS.WHITE};
-  }
-
-  ${MenuNav}:hover &:first-child,
-  ${MenuNav}:hover &:last-child {
-    background: ${COLORS.STARTPAGE_GRADIENT_END};
   }
 
   &:first-child {
@@ -121,9 +104,7 @@ const MenuItem = styled.li`
   }
 `;
 
-const ItemWrapper = styled(NavLink).attrs({
-  to: '/createPath',
-})`
+const ItemWrapper = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 1.8rem;
@@ -134,12 +115,12 @@ const ItemWrapper = styled(NavLink).attrs({
   height: 100%;
 
   & span {
-    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in;
   }
 
   ${MenuNav}:hover & span {
-    visibility: visible;
-    animation: ${animateOpacity} 0.3s ease-in;
+    opacity: 1;
   }
 `;
 
@@ -155,9 +136,9 @@ const MenuScreen = ({ header, items, bottom }: IMenuProps): JSX.Element => {
             <HeaderIconComponent />
           </MenuItem>
           {
-            items.map(({ name, Icon }) => (
+            items.map(({ name, Icon, path }) => (
               <MenuItem>
-                <ItemWrapper>
+                <ItemWrapper to={path}>
                   <Icon />
                   <span>{name}</span>
                 </ItemWrapper>

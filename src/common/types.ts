@@ -8,7 +8,8 @@ export interface ITheme {
 
 export interface IMenuItem {
   name: string,
-  Icon: SVGType
+  Icon: SVGType,
+  path: string
 }
 
 export interface IMenuItemProps {
