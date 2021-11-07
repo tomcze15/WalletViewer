@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import COLORS from 'constants/colors';
-import { IMenuItem, IMenuProps } from 'common/types';
+import { IMenuProps } from 'common/types';
 
 const MenuContainer = styled.header`
   position: fixed;
@@ -18,12 +19,12 @@ const MenuNav = styled.nav`
   height: 100%;
   width: 6rem;
   border-radius: 50px;
-  background-color: ${COLORS.STARTPAGE_GRADIENT_END};
+  background-color: ${(p) => p.theme.menu.background};
   overflow: hidden;
   transition: width 500ms ease, border-radius 500ms ease;
-  -moz-box-shadow: 15px 0px 51px ${COLORS.SHADOW};
-  -webkit-box-shadow: 15px 0px 51px ${COLORS.SHADOW};
-  box-shadow: 15px 0px 51px ${COLORS.SHADOW};
+  -moz-box-shadow: 15px 0px 51px ${(p) => p.theme.menu.shadow};
+  -webkit-box-shadow: 15px 0px 51px ${(p) => p.theme.menu.shadow};
+  box-shadow: 15px 0px 51px ${(p) => p.theme.menu.shadow};
 
   &:hover {
     width: 15rem;
@@ -47,12 +48,12 @@ const MenuItem = styled.li`
   width: 100%;
   padding-left: 2rem;
   border-radius: 10px;
-  background-color: ${COLORS.STARTPAGE_GRADIENT_END};
+  background-color: inherit;
   transition: background-color 0.1s linear;
 
   &:hover {
     border-radius: 10px;
-    background-color: ${COLORS.STARTPAGE_GRADIENT_START};
+    background-color: ${(p) => p.theme.menu.hover};
   }
 
   & svg {
@@ -64,7 +65,7 @@ const MenuItem = styled.li`
 
   &:first-child,
   &:last-child {
-    background-color: ${COLORS.STARTPAGE_GRADIENT_END};
+    background-color: ${COLORS.TRANSPARENT}
   }
 
   &:first-child,
@@ -74,8 +75,8 @@ const MenuItem = styled.li`
     justify-content: center;
     height: 4rem;
     padding-left: 0;
-    fill: ${COLORS.WHITE};
-    color: ${COLORS.WHITE};
+    fill: ${(p) => p.theme.menu.icon};
+    color: ${(p) => p.theme.menu.icon};
   }
 
   &:first-child {
@@ -109,10 +110,13 @@ const ItemWrapper = styled(NavLink)`
   align-items: center;
   gap: 1.8rem;
   text-decoration: none;
-  fill: ${COLORS.WHITE};
-  color: ${COLORS.WHITE};
+  color: ${(p) => p.theme.menu.text.color};
   font-size: 1.2rem;
   height: 100%;
+
+  & svg {
+    color: ${(p) => p.theme.menu.icon};
+  }
 
   & span {
     opacity: 0;
@@ -124,34 +128,29 @@ const ItemWrapper = styled(NavLink)`
   }
 `;
 
-const MenuScreen = ({ header, items, bottom }: IMenuProps): JSX.Element => {
-  const HeaderIconComponent = header.Icon;
-  const BottomIconComponent = bottom.Icon;
-
-  return (
-    <MenuContainer>
-      <MenuNav>
-        <MenuList>
-          <MenuItem>
-            <HeaderIconComponent />
-          </MenuItem>
-          {
-            items.map(({ name, Icon, path }) => (
-              <MenuItem>
-                <ItemWrapper to={path}>
+const MenuScreen = ({ header, items, bottom }: IMenuProps): JSX.Element => (
+  <MenuContainer>
+    <MenuNav>
+      <MenuList>
+        <MenuItem>
+          <header.Icon key={header.label} />
+        </MenuItem>
+        {
+            items.map(({ label, Icon, href }) => (
+              <MenuItem key={label}>
+                <ItemWrapper to={href}>
                   <Icon />
-                  <span>{name}</span>
+                  <span>{label}</span>
                 </ItemWrapper>
               </MenuItem>
             ))
           }
-          <MenuItem>
-            <BottomIconComponent />
-          </MenuItem>
-        </MenuList>
-      </MenuNav>
-    </MenuContainer>
-  );
-};
+        <MenuItem key={bottom.label}>
+          <bottom.Icon />
+        </MenuItem>
+      </MenuList>
+    </MenuNav>
+  </MenuContainer>
+);
 
 export default MenuScreen;

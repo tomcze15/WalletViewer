@@ -1,10 +1,18 @@
+import { ITheme } from 'common/types';
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+export default createGlobalStyle<ITheme>`
   * {
     box-sizing: border-box;
   }
-  body {
+  body,
+  #root {
     height: 100vh;
+    width: 100vw;
+    background: ${(p) => p.globalBackground};
+    & h1,h2,h3,h4,h5 {
+      margin: 0;
+      padding: 0;
+    }
   }
 `;

@@ -5,10 +5,14 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './locales/en/translationEN';
+import translationPL from './locales/pl/translationPL';
 
 const resources = {
   en: {
     translation: translationEN,
+  },
+  pl: {
+    translation: translationPL,
   },
 };
 
@@ -18,8 +22,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    fallbackLng: ['en', 'pl'],
     lng: 'en',
-    fallbackLng: 'en',
     debug: true,
 
     interpolation: {
