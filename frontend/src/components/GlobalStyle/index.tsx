@@ -9,7 +9,10 @@ export default createGlobalStyle<ITheme>`
   #root {
     height: 100vh;
     width: 100vw;
-    background: ${(p) => p.globalBackground};
+    background-color: ${(p) => p.globalBackground};
+
+    transition: background-color 0.2s linear;
+
     & h1,h2,h3,h4,h5 {
       margin: 0;
       padding: 0;

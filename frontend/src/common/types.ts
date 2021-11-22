@@ -34,10 +34,23 @@ export interface ITheme extends DefaultTheme{
     hover: string
     icon: string
   },
-  toggleBtn: {
-    background: string,
-    icon: string,
-  },
+  settings: {
+    toggleBtn: {
+      border: string,
+      background: string,
+      icon: string,
+    },
+    languageChanger: {
+      background: string,
+      contentShadow: string,
+      headerFont: string,
+      item: {
+        background: string,
+        font: string,
+        hover: string
+      }
+    }
+  }
   globalBackground: string,
 }
 

@@ -7,22 +7,24 @@ import { Checkmark } from 'assets/icons';
 const LangWrapper = styled.table`
   height: 16rem;
   width: 30rem;
-  border-radius: 21px 21px 0 0;
+  background: ${({ theme }) => theme.settings.languageChanger.background};
+  border-radius: 21px;
   border-spacing: 0;
-  -moz-box-shadow: 0px 0px 30px ${(p) => p.theme.menu.shadow};
-  -webkit-box-shadow: 0px 0px 30px ${(p) => p.theme.menu.shadow};
-  box-shadow: 0px 0px 30px ${(p) => p.theme.menu.shadow};
+  -moz-box-shadow: 0px 0px 30px ${({ theme }) => theme.menu.shadow};
+  -webkit-box-shadow: 0px 0px 30px ${({ theme }) => theme.menu.shadow};
+  box-shadow: 0px 0px 30px ${({ theme }) => theme.menu.shadow};
   overflow: hidden;
 `;
 
 const Header = styled.thead`
-  height: 3rem;
+  height: 5rem;
   width: 100%;
-  background: #434e5e;
+  background: ${({ theme }) => theme.settings.languageChanger.background};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ECECEC;
+  color: ${({ theme }) => theme.settings.languageChanger.headerFont};
+  font-size: 1.5rem;
 
   & h3 {
     font-weight: bold;
@@ -30,29 +32,48 @@ const Header = styled.thead`
 `;
 
 const Body = styled.tbody`
-  height: 13rem;
+  height: 100%;
   width: 100%;
-  background: lightgray;
+
+  & tr:first-child {
+    border-radius: 21px 21px 0 0;
+    -webkit-box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
+    -moz-box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
+    box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
+  }
+
+  & tr:first-child td {
+    border-radius: 21px 21px 0 0;
+  }
+
+  & tr:hover td {
+    background-color: ${({ theme }) => theme.settings.languageChanger.item.hover};
+  }
+
+  & tr:first-child:hover {
+    border-radius: 21px 21px 0 0;
+  }
 `;
 
 const LngOptionContainer = styled.tr`
-  & :hover {
-    background: red;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 const LngOptionContent = styled.td`
   padding: 1rem 3rem;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: ${({ theme }) => theme.settings.languageChanger.item.background};
+
+  transition: background-color 0.1s linear;
 `;
 
 const LanguageName = styled.span`
   font-size: 1.6rem;
+  color: ${({ theme }) => theme.settings.languageChanger.item.font};
 `;
 
 const FlagCheckmarkContainer = styled.div`
@@ -72,6 +93,7 @@ const CheckmarkContainer = styled.div`
   width: 1.4rem;
 
   & svg {
+    color: ${({ theme }) => theme.settings.languageChanger.item.font};
     height: 1.4rem;
     width: 1.4rem;
   }

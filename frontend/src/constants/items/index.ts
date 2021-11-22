@@ -65,6 +65,10 @@ export const MENU_OPTIONS: IMenuOption[] = [
   },
 ];
 
+// TODO:
+//
+// Probably, to delete, because it's never used
+//
 export const LNG_OPTIONS: ILanguageItem[] = [
   {
     type: Language.PL,

@@ -1,29 +1,32 @@
-import { Moon, Sun } from 'assets/icons';
-import { IToggleButtonProps, Theme } from 'common/types';
 import React from 'react';
 import styled from 'styled-components';
 
+import { Moon, Sun } from 'assets/icons';
+import { IToggleButtonProps, Theme } from 'common/types';
+
 const ToggleContainer = styled.button`
-  background: ${({ theme }) => theme.toggleBtn.background};
-  border: 2px solid red;
+  background-color: ${({ theme }) => theme.settings.toggleBtn.background};
+  border: 2px solid ${({ theme }) => theme.settings.toggleBtn.border};
   border-radius: 30px;
-  cursor: pointer;
-  display: flex;
   font-size: 0.5rem;
-  justify-content: center;
-  align-items: center;
   margin: 0 0;
-  overflow: hidden;
   padding: 0.5rem;
-  position: relative;
   width: 6rem;
   height: 3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  transition: background-color 0.2s linear;
 
   svg {
     height: auto;
     width: 2rem;
     transition: all 0.3s linear;
-    color: ${({ theme }) => (theme.toggleBtn.icon)};
+    color: ${({ theme }) => (theme.settings.toggleBtn.icon)};
 
     &:first-child {
       transform: ${({ theme }) => (theme.id === Theme.LIGHT ? 'translateY(0)' : 'translateY(100px)')};

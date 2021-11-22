@@ -12,9 +12,22 @@ const DarkTheme: ITheme = {
     hover: COLORS.MENU_ITEM_BG_HOVER_D,
     icon: COLORS.ICON_D,
   },
-  toggleBtn: {
-    background: COLORS.TOGGLE_BTN_BG_D,
-    icon: COLORS.TOGGLE_BTN_MOON,
+  settings: {
+    toggleBtn: {
+      border: COLORS.TOGGLE_BORDER,
+      background: COLORS.TOGGLE_BTN_BG_D,
+      icon: COLORS.TOGGLE_BTN_MOON,
+    },
+    languageChanger: {
+      background: COLORS.LNG_CHANGER_BG,
+      contentShadow: COLORS.LNG_CHANGER_CONTENT_SHADOW,
+      headerFont: COLORS.LNG_CHANGER_HEADER_FONT,
+      item: {
+        background: COLORS.LNG_CHANGER_OPT_BG,
+        font: COLORS.LNG_CHANGER_OPT_FONTCOLOR,
+        hover: COLORS.LNG_CHANGER_OPT_HOVER,
+      },
+    },
   },
   globalBackground: COLORS.GLOBAL_BG_D,
 };
@@ -30,9 +43,22 @@ const LightTheme: ITheme = {
     hover: COLORS.MENU_ITEM_BG_HOVER_L,
     icon: COLORS.ICON_L,
   },
-  toggleBtn: {
-    background: COLORS.TOGGLE_BTN_BG_L,
-    icon: COLORS.TOGGLE_BTN_SUN,
+  settings: {
+    toggleBtn: {
+      border: COLORS.TOGGLE_BORDER,
+      background: COLORS.TOGGLE_BTN_BG_L,
+      icon: COLORS.TOGGLE_BTN_SUN,
+    },
+    languageChanger: {
+      background: COLORS.LNG_CHANGER_BG,
+      contentShadow: COLORS.LNG_CHANGER_CONTENT_SHADOW,
+      headerFont: COLORS.LNG_CHANGER_HEADER_FONT,
+      item: {
+        background: COLORS.LNG_CHANGER_OPT_BG,
+        font: COLORS.LNG_CHANGER_OPT_FONTCOLOR,
+        hover: COLORS.LNG_CHANGER_OPT_HOVER,
+      },
+    },
   },
   globalBackground: COLORS.GLOBAL_BG_L,
 
