@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Wallet from 'components/Wallets/Wallet';
+import { Wallet } from 'components';
 
 const WalletsWrapper = styled.div`
   height: 100%;

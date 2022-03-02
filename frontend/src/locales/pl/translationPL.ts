@@ -10,6 +10,6 @@ export default {
     CHARTS: 'Wykresy',
     WALLETS: 'Portfele',
     SETTINGS: 'Ustawienia',
-    ARROWS: 'Strzałka', // raczej do usunięcia
+    ARROWS: 'Strzałka', // rather to delete
   },
 };

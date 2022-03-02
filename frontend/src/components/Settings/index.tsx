@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import ToggleThemeButton from 'components/ToggleThemeButton';
-import LanguageChanger from 'components/LanguageChanger';
+import { ToggleThemeButton, LanguageChanger } from 'components';
 
 const SettingsWrapper = styled.div`
   height: 100%;
