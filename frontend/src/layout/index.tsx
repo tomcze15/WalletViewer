@@ -13,9 +13,7 @@ const LayoutWrapper = styled.main`
 const index = ({ children }: ILayoutProps): JSX.Element => (
   <>
     <Menu />
-    <LayoutWrapper>
-      { children }
-    </LayoutWrapper>
+    <LayoutWrapper>{children}</LayoutWrapper>
   </>
 );
 

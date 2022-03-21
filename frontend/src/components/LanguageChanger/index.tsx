@@ -10,22 +10,35 @@ const LanguageChanger = (): JSX.Element => {
 
   const changeLanguage = (lng: Language): void => {
     switch (lng) {
-      case Language.PL: i18n.changeLanguage(LNG_SHORTCUTNAME.PL); break;
-      case Language.EN: i18n.changeLanguage(LNG_SHORTCUTNAME.EN); break;
-      default: i18n.changeLanguage(LNG_SHORTCUTNAME.EN);
+      case Language.PL:
+        i18n.changeLanguage(LNG_SHORTCUTNAME.PL);
+        break;
+      case Language.EN:
+        i18n.changeLanguage(LNG_SHORTCUTNAME.EN);
+        break;
+      default:
+        i18n.changeLanguage(LNG_SHORTCUTNAME.EN);
     }
   };
 
   const currentLng = (): Language => {
     switch (i18n.language) {
-      case LNG_SHORTCUTNAME.EN: return Language.EN;
-      case LNG_SHORTCUTNAME.PL: return Language.PL;
-      default: return Language.EN;
+      case LNG_SHORTCUTNAME.EN:
+        return Language.EN;
+      case LNG_SHORTCUTNAME.PL:
+        return Language.PL;
+      default:
+        return Language.EN;
     }
   };
 
   return (
-    <LanguageChangerScreen title={t('HEADER_CHANGE_LNG')} changeLanguage={changeLanguage} lngItems={LNG_OPTIONS} currentLng={currentLng()} />
+    <LanguageChangerScreen
+      title={t('HEADER_CHANGE_LNG')}
+      changeLanguage={changeLanguage}
+      lngItems={LNG_OPTIONS}
+      currentLng={currentLng()}
+    />
   );
 };
 

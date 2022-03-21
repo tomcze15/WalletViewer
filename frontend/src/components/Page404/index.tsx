@@ -16,7 +16,7 @@ const Page404 = (): JSX.Element => {
 
   return (
     <PageWrapper>
-      <h1>{ t('NOT_FOUND_TITLE') }</h1>
+      <h1>{t('NOT_FOUND_TITLE')}</h1>
     </PageWrapper>
   );
 };

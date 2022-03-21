@@ -1,8 +1,11 @@
+import { ILanguageItem, IMenuItem, IMenuOption, Language } from 'common/types';
 import {
-  ILanguageItem, IMenuItem, IMenuOption, Language,
-} from 'common/types';
-import {
-  WalletLogo, Dashboard, Arrows, Charts, Settings, Wallet,
+  WalletLogo,
+  Dashboard,
+  Arrows,
+  Charts,
+  Settings,
+  Wallet,
 } from 'assets/icons';
 import { FlagPL, FlagGB } from 'assets/images';
 

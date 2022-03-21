@@ -8,8 +8,6 @@ const WalletWrapper = styled.div`
   border-radius: 50%;
 `;
 
-const index = (): JSX.Element => (
-  <WalletWrapper />
-);
+const index = (): JSX.Element => <WalletWrapper />;
 
 export default index;

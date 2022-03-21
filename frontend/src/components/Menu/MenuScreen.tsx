@@ -64,7 +64,7 @@ const MenuItem = styled.li`
 
   &:first-child,
   &:last-child {
-    background-color: ${COLORS.TRANSPARENT}
+    background-color: ${COLORS.TRANSPARENT};
   }
 
   &:first-child,
@@ -134,16 +134,14 @@ const MenuScreen = ({ header, items, bottom }: IMenuProps): JSX.Element => (
         <MenuItem>
           <header.Icon key={header.label} />
         </MenuItem>
-        {
-            items.map(({ label, Icon, href }) => (
-              <MenuItem key={label}>
-                <ItemWrapper to={href}>
-                  <Icon />
-                  <span>{label}</span>
-                </ItemWrapper>
-              </MenuItem>
-            ))
-          }
+        {items.map(({ label, Icon, href }) => (
+          <MenuItem key={label}>
+            <ItemWrapper to={href}>
+              <Icon />
+              <span>{label}</span>
+            </ItemWrapper>
+          </MenuItem>
+        ))}
         <MenuItem key={bottom.label}>
           <bottom.Icon />
         </MenuItem>

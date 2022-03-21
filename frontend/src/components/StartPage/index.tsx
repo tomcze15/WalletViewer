@@ -17,7 +17,7 @@ const animateOpacity = keyframes`
   }
 `;
 
-const animatePosition = (direction?: DirectionType): Keyframes => (
+const animatePosition = (direction?: DirectionType): Keyframes =>
   keyframes`
     0% {
       transform: translateX(${direction === 'right' ? '-' : null}25px);
@@ -26,14 +26,17 @@ const animatePosition = (direction?: DirectionType): Keyframes => (
     100% {
       transform: translateX(0px);
     }
-  `
-);
+  `;
 
 const StartWrapper = styled.header`
   height: 100vh;
   width: 100vw;
   background: ${COLORS.STARTPAGE_GRADIENT_START};
-  background: linear-gradient(45deg, ${COLORS.STARTPAGE_GRADIENT_START} 0%, ${COLORS.STARTPAGE_GRADIENT_END} 100%);
+  background: linear-gradient(
+    45deg,
+    ${COLORS.STARTPAGE_GRADIENT_START} 0%,
+    ${COLORS.STARTPAGE_GRADIENT_END} 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,9 +76,7 @@ const StartPage = (): JSX.Element => {
     <StartWrapper>
       <Logo />
       <Divider />
-      <Title>
-        { t('APP_NAME') }
-      </Title>
+      <Title>{t('APP_NAME')}</Title>
     </StartWrapper>
   );
 };

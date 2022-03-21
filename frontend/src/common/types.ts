@@ -1,8 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
-export type SVGType = React.FunctionComponent<React.SVGProps<SVGSVGElement> & {
-  title?: string | undefined;
-}>;
+export type SVGType = React.FunctionComponent<
+  React.SVGProps<SVGSVGElement> & {
+    title?: string | undefined;
+  }
+>;
 
 export enum Theme {
   LIGHT,
@@ -12,61 +14,61 @@ export enum Theme {
 
 export enum Language {
   PL,
-  EN
+  EN,
 }
 
 // Is it neccessary?
 export interface ILanguageItem {
-  type: Language,
-  name: string,
+  type: Language;
+  name: string;
   shortcut: string;
-  image: string
+  image: string;
 }
 
-export interface ITheme extends DefaultTheme{
-  id: Theme,
+export interface ITheme extends DefaultTheme {
+  id: Theme;
   menu: {
     text: {
-      color: string
-    }
-    background: string,
-    shadow: string,
-    hover: string
-    icon: string
-  },
+      color: string;
+    };
+    background: string;
+    shadow: string;
+    hover: string;
+    icon: string;
+  };
   settings: {
     toggleBtn: {
-      border: string,
-      background: string,
-      icon: string,
-    },
+      border: string;
+      background: string;
+      icon: string;
+    };
     languageChanger: {
-      background: string,
-      contentShadow: string,
-      headerFont: string,
+      background: string;
+      contentShadow: string;
+      headerFont: string;
       item: {
-        background: string,
-        font: string,
-        hover: string
-      }
-    }
-  }
-  globalBackground: string,
+        background: string;
+        font: string;
+        hover: string;
+      };
+    };
+  };
+  globalBackground: string;
 }
 
 export interface IMenuItem {
-  label: string,
-  Icon: SVGType,
+  label: string;
+  Icon: SVGType;
 }
 
 export interface IMenuOption extends IMenuItem {
-  href: string
+  href: string;
 }
 
 export interface IMenuProps {
-  header: IMenuItem,
-  items: IMenuOption[],
-  bottom: IMenuItem
+  header: IMenuItem;
+  items: IMenuOption[];
+  bottom: IMenuItem;
 }
 
 export interface ILayoutProps {
@@ -74,12 +76,12 @@ export interface ILayoutProps {
 }
 
 export interface IToggleButtonProps {
-  onToggle: () => void
+  onToggle: () => void;
 }
 
 export interface ILanguageChangerProps {
-  title: string,
-  lngItems: ILanguageItem[],
-  currentLng: Language,
-  changeLanguage: (lng: Language) => void
+  title: string;
+  lngItems: ILanguageItem[];
+  currentLng: Language;
+  changeLanguage: (lng: Language) => void;
 }

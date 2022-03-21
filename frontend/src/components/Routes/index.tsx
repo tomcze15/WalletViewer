@@ -6,18 +6,9 @@ import { MENU_OPTION_HREF } from 'constants/items';
 
 const Routes = (): JSX.Element => (
   <MainRouters>
-    <Route
-      element={<Wallets />}
-      path={MENU_OPTION_HREF.WALLETS}
-    />
-    <Route
-      element={<Settings />}
-      path={MENU_OPTION_HREF.SETTINGS}
-    />
-    <Route
-      element={<Page404 />}
-      path="*"
-    />
+    <Route element={<Wallets />} path={MENU_OPTION_HREF.WALLETS} />
+    <Route element={<Settings />} path={MENU_OPTION_HREF.SETTINGS} />
+    <Route element={<Page404 />} path="*" />
   </MainRouters>
 );
 

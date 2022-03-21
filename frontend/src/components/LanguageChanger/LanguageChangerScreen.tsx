@@ -37,9 +37,12 @@ const Body = styled.tbody`
 
   & tr:first-child {
     border-radius: 21px 21px 0 0;
-    -webkit-box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
-    -moz-box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
-    box-shadow: 0px 7px 47px 11px ${({ theme }) => theme.settings.languageChanger.contentShadow};
+    -webkit-box-shadow: 0px 7px 47px 11px
+      ${({ theme }) => theme.settings.languageChanger.contentShadow};
+    -moz-box-shadow: 0px 7px 47px 11px
+      ${({ theme }) => theme.settings.languageChanger.contentShadow};
+    box-shadow: 0px 7px 47px 11px
+      ${({ theme }) => theme.settings.languageChanger.contentShadow};
   }
 
   & tr:first-child td {
@@ -47,7 +50,8 @@ const Body = styled.tbody`
   }
 
   & tr:hover td {
-    background-color: ${({ theme }) => theme.settings.languageChanger.item.hover};
+    background-color: ${({ theme }) =>
+      theme.settings.languageChanger.item.hover};
   }
 
   & tr:first-child:hover {
@@ -66,7 +70,8 @@ const LngOptionContent = styled.td`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.settings.languageChanger.item.background};
+  background-color: ${({ theme }) =>
+    theme.settings.languageChanger.item.background};
 
   transition: background-color 0.1s linear;
 `;
@@ -112,21 +117,23 @@ const LanguageChangerScreen = ({
       </tr>
     </Header>
     <Body>
-      {
-        lngItems.map((item) => (
-          <LngOptionContainer onClick={() => { changeLanguage(item.type); }}>
-            <LngOptionContent>
-              <LanguageName>{item.name}</LanguageName>
-              <FlagCheckmarkContainer>
-                <CountryImg src={item.image} alt={item.shortcut} />
-                <CheckmarkContainer>
-                  {item.type === currentLng ? <Checkmark /> : null}
-                </CheckmarkContainer>
-              </FlagCheckmarkContainer>
-            </LngOptionContent>
-          </LngOptionContainer>
-        ))
-      }
+      {lngItems.map((item) => (
+        <LngOptionContainer
+          onClick={() => {
+            changeLanguage(item.type);
+          }}
+        >
+          <LngOptionContent>
+            <LanguageName>{item.name}</LanguageName>
+            <FlagCheckmarkContainer>
+              <CountryImg src={item.image} alt={item.shortcut} />
+              <CheckmarkContainer>
+                {item.type === currentLng ? <Checkmark /> : null}
+              </CheckmarkContainer>
+            </FlagCheckmarkContainer>
+          </LngOptionContent>
+        </LngOptionContainer>
+      ))}
     </Body>
   </LangWrapper>
 );

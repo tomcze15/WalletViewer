@@ -61,10 +61,6 @@ const LightTheme: ITheme = {
     },
   },
   globalBackground: COLORS.GLOBAL_BG_L,
-
 };
 
-export {
-  DarkTheme,
-  LightTheme,
-};
+export { DarkTheme, LightTheme };

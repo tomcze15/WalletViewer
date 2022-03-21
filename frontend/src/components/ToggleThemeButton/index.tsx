@@ -26,14 +26,16 @@ const ToggleContainer = styled.button`
     height: auto;
     width: 2rem;
     transition: all 0.3s linear;
-    color: ${({ theme }) => (theme.settings.toggleBtn.icon)};
+    color: ${({ theme }) => theme.settings.toggleBtn.icon};
 
     &:first-child {
-      transform: ${({ theme }) => (theme.id === Theme.LIGHT ? 'translateY(0)' : 'translateY(100px)')};
+      transform: ${({ theme }) =>
+        theme.id === Theme.LIGHT ? 'translateY(0)' : 'translateY(100px)'};
     }
 
     &:nth-child(2) {
-      transform: ${({ theme }) => (theme.id === Theme.LIGHT ? 'translateY(-100px)' : 'translateY(0)')};
+      transform: ${({ theme }) =>
+        theme.id === Theme.LIGHT ? 'translateY(-100px)' : 'translateY(0)'};
     }
   }
 `;
