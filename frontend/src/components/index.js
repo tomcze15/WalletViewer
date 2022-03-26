@@ -1,5 +1,6 @@
 export { default as GlobalStyle } from './GlobalStyle';
 export { default as LanguageChanger } from './LanguageChanger';
+export { default as TitlePage } from './TitlePage';
 export { default as Menu } from './Menu';
 export { default as Page404 } from './Page404';
 export { default as Routes } from './Routes';
@@ -7,3 +8,4 @@ export { default as Settings } from './Settings';
 export { default as ToggleThemeButton } from './ToggleThemeButton';
 export { default as Wallet } from './Wallets/Wallet';
 export { default as Wallets } from './Wallets';
+export { default as CreateWallet } from './Wallets/Create';

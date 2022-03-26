@@ -15,6 +15,7 @@ const MenuContainer = styled.header`
 `;
 
 const MenuNav = styled.nav`
+  max-height: 60rem;
   height: 100%;
   width: 6rem;
   border-radius: 50px;
@@ -45,7 +46,6 @@ const MenuList = styled.ul`
 const MenuItem = styled.li`
   height: 6rem;
   width: 100%;
-  padding-left: 2rem;
   border-radius: 10px;
   background-color: inherit;
   transition: background-color 0.1s linear;
@@ -107,8 +107,9 @@ const MenuItem = styled.li`
 const ItemWrapper = styled(NavLink)`
   display: flex;
   align-items: center;
-  gap: 1.8rem;
   text-decoration: none;
+  padding-left: 2rem;
+  gap: 1.8rem;
   color: ${(p) => p.theme.menu.text.color};
   font-size: 1.2rem;
   height: 100%;

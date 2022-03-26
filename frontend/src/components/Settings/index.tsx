@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { ToggleThemeButton, LanguageChanger } from 'components';
+import { ToggleThemeButton, LanguageChanger, TitlePage } from 'components';
 
 const SettingsWrapper = styled.div`
   height: 100%;
@@ -18,6 +18,7 @@ const Settings = (): JSX.Element => {
 
   return (
     <SettingsWrapper>
+      <TitlePage title={'Settings'} />
       <ToggleThemeButton onToggle={setTheme} />
       <LanguageChanger />
     </SettingsWrapper>

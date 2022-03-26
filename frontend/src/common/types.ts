@@ -6,6 +6,14 @@ export type SVGType = React.FunctionComponent<
   }
 >;
 
+export enum Currency {
+  PL,
+  USD,
+  GBP,
+  EUR,
+  JPY,
+}
+
 export enum Theme {
   LIGHT,
   DARK,
@@ -17,7 +25,7 @@ export enum Language {
   EN,
 }
 
-// Is it neccessary?
+// ? Is this need
 export interface ILanguageItem {
   type: Language;
   name: string;
@@ -56,19 +64,19 @@ export interface ITheme extends DefaultTheme {
   globalBackground: string;
 }
 
-export interface IMenuItem {
+export interface IOption {
   label: string;
   Icon: SVGType;
 }
 
-export interface IMenuOption extends IMenuItem {
+export interface IExtendedOption extends IOption {
   href: string;
 }
 
 export interface IMenuProps {
-  header: IMenuItem;
-  items: IMenuOption[];
-  bottom: IMenuItem;
+  header: IOption;
+  items: IExtendedOption[];
+  bottom: IOption;
 }
 
 export interface ILayoutProps {
@@ -84,4 +92,14 @@ export interface ILanguageChangerProps {
   lngItems: ILanguageItem[];
   currentLng: Language;
   changeLanguage: (lng: Language) => void;
+}
+
+export interface ICreateWalletProps {
+  handleFormSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChangeInitialBalance: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface ITitlePageProps {
+  title: string;
 }

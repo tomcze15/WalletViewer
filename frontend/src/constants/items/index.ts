@@ -1,4 +1,9 @@
-import { ILanguageItem, IMenuItem, IMenuOption, Language } from 'common/types';
+import {
+  IExtendedOption,
+  ILanguageItem,
+  IOption,
+  Language,
+} from 'common/types';
 import {
   WalletLogo,
   Dashboard,
@@ -6,6 +11,7 @@ import {
   Charts,
   Settings,
   Wallet,
+  CreatePlusCircle,
 } from 'assets/icons';
 import { FlagPL, FlagGB } from 'assets/images';
 
@@ -25,6 +31,10 @@ export const MENU_OPTION_HREF = {
   SETTINGS: '/settings',
 };
 
+export const WALLETS_OPTION_HREF = {
+  CREATE: MENU_OPTION_HREF.WALLETS + '/create',
+};
+
 export const LNG_NAME = {
   PL: 'Polski',
   EN: 'English',
@@ -35,17 +45,17 @@ export const LNG_SHORTCUTNAME = {
   EN: 'en',
 };
 
-export const MENU_TOP: IMenuItem = {
+export const MENU_TOP: IOption = {
   label: MENU_ITEM.APP_TITLE,
   Icon: WalletLogo,
 };
 
-export const MENU_BOTTOM: IMenuItem = {
+export const MENU_BOTTOM: IOption = {
   label: MENU_ITEM.ARROWS,
   Icon: Arrows,
 };
 
-export const MENU_OPTIONS: IMenuOption[] = [
+export const MENU_OPTIONS: IExtendedOption[] = [
   {
     label: MENU_ITEM.DASHBOARD,
     Icon: Dashboard,
@@ -68,10 +78,15 @@ export const MENU_OPTIONS: IMenuOption[] = [
   },
 ];
 
-// TODO:
-//
-// Probably, to delete, because it's never used
-//
+export const WALLETS_OPTIONS: IExtendedOption[] = [
+  {
+    label: 'create wallet',
+    Icon: CreatePlusCircle,
+    href: '/wallets/create',
+  },
+];
+
+// ! TODO: Probably, to delete, because it's never used
 export const LNG_OPTIONS: ILanguageItem[] = [
   {
     type: Language.PL,
