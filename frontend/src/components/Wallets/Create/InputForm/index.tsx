@@ -65,7 +65,7 @@ const Input = styled.input`
 
   &[type='number']::-webkit-inner-spin-button,
   &[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
   }
 `;
 
