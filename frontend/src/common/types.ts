@@ -6,6 +6,8 @@ export type SVGType = React.FunctionComponent<
   }
 >;
 
+export type ButtonType = 'button' | 'submit' | 'reset';
+
 export enum Currency {
   PL,
   USD,
@@ -116,8 +118,9 @@ export interface IButton {
   Icon?: SVGType;
   children: string;
   onClick?: () => void;
+  type?: ButtonType;
 }
 
-export interface IButtonAnim {
+export interface IButtonStyleProps {
   isAnim?: boolean;
 }
