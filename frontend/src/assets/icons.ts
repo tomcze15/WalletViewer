@@ -9,7 +9,6 @@ import {
 } from 'react-icons/fa';
 import { IoSettingsSharp, IoCheckmarkSharp } from 'react-icons/io5';
 import { MdAddCircleOutline, MdDoubleArrow } from 'react-icons/md';
-import {} from 'react-icons/md';
 
 export {
   WalletLogo,
