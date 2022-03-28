@@ -8,6 +8,8 @@ export type SVGType = React.FunctionComponent<
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 
+export type ButtonIconSize = 'tiny' | 'small' | 'default' | 'large' | 'huge';
+
 export enum Currency {
   PL,
   USD,
@@ -117,10 +119,12 @@ export interface ITitlePageProps {
 export interface IButton {
   Icon?: SVGType;
   children: string;
-  onClick?: () => void;
   type?: ButtonType;
+  iconSize?: ButtonIconSize;
+  onClick?: () => void;
 }
 
 export interface IButtonStyleProps {
   isAnim?: boolean;
+  iconSize?: ButtonIconSize;
 }

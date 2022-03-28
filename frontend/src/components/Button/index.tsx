@@ -17,6 +17,14 @@ const attachHover = (): FlattenInterpolation<ThemeProps<any>> => {
   `;
 };
 
+const mapIconSizes = {
+  tiny: '0.5',
+  small: '0.8',
+  default: '1',
+  large: '1.5',
+  huge: '1.8',
+};
+
 const flexCenter = css`
   align-items: center;
   justify-content: center;
@@ -49,7 +57,7 @@ const Text = styled.span`
   font-size: 1.2rem;
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<IButtonStyleProps>`
   background-color: none;
   height: inherit;
   width: 3rem;
@@ -71,18 +79,30 @@ const IconWrapper = styled.div`
 
   svg {
     display: none;
-    height: 1.8rem;
-    width: 1.8rem;
+    height: ${({ iconSize }) => {
+      console.log('Height: ', iconSize);
+      return iconSize ? mapIconSizes[iconSize] : mapIconSizes.default;
+    }}rem;
+    width: ${({ iconSize }) =>
+      iconSize ? mapIconSizes[iconSize] : mapIconSizes.default}rem;
   }
 `;
 
-export const Button = ({ Icon, children, type, onClick }: IButton) => (
-  <Container isAnim={Icon ? true : false} onClick={onClick} type={type}>
-    <Text>{children}</Text>
-    {Icon ? (
-      <IconWrapper>
-        <Icon />
-      </IconWrapper>
-    ) : null}
-  </Container>
-);
+export const Button = ({
+  Icon,
+  children,
+  type,
+  iconSize,
+  onClick,
+}: IButton): JSX.Element => {
+  return (
+    <Container isAnim={Icon ? true : false} onClick={onClick} type={type}>
+      <Text>{children}</Text>
+      {Icon ? (
+        <IconWrapper iconSize={iconSize}>
+          <Icon />
+        </IconWrapper>
+      ) : null}
+    </Container>
+  );
+};
