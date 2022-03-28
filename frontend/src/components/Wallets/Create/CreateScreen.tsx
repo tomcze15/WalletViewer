@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { ICreateWalletProps } from 'common/types';
 import { InputForm } from './InputForm';
+import { Button } from 'components/Button';
+import { CreatePlusCircle } from 'assets/icons';
 
 const WrapperContent = styled.div`
   display: flex;
@@ -45,7 +47,7 @@ const Title = styled.h1`
   color: white;
 `;
 
-export const CreateScreen = (props: ICreateWalletProps) => {
+export const CreateScreen = (props: ICreateWalletProps): JSX.Element => {
   return (
     <WrapperContent>
       <FormContainer>
@@ -63,7 +65,9 @@ export const CreateScreen = (props: ICreateWalletProps) => {
             type="number"
             handleOnChange={props.handleChangeInitialBalance}
           />
-          <button>Create</button>
+          <Button type="submit" iconSize="large" Icon={CreatePlusCircle}>
+            Create
+          </Button>
         </Body>
       </FormContainer>
     </WrapperContent>
