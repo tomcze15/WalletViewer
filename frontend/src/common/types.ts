@@ -10,6 +10,13 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 
 export type ButtonIconSize = 'tiny' | 'small' | 'default' | 'large' | 'huge';
 
+export type CardBodyDirectionSizType = 'left' | 'center' | 'right';
+
+export type BodyComponent = React.FunctionComponent<ICardBody>;
+export type CardComponent = React.FunctionComponent<ICard> & {
+  Body: BodyComponent;
+};
+
 export enum Currency {
   PL,
   USD,
@@ -127,4 +134,14 @@ export interface IButton {
 export interface IButtonStyleProps {
   isAnim?: boolean;
   iconSize?: ButtonIconSize;
+}
+
+export interface ICard {
+  title?: string;
+  children?: React.ReactNode;
+}
+
+export interface ICardBody {
+  children?: React.ReactNode;
+  direction?: CardBodyDirectionSizType;
 }
