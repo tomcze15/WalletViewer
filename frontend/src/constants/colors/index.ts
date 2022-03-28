@@ -25,4 +25,14 @@ export default {
   TRANSPARENT: 'rgba(0, 0, 0, 0)',
   GLOBAL_BG_D: '#1a283c', // '#1d2534',
   GLOBAL_BG_L: '#faf9f8',
+  BUTTON_L_SIDE: '#1d2534',
+  BUTTON_R_SIDE: '#668ec7',
+  LIGHT: {
+    BUTTON_L_SIDE: '#1d2534',
+    BUTTON_R_SIDE: '#668ec7',
+  },
+  DARK: {
+    BUTTON_L_SIDE: '#ffffff',
+    BUTTON_R_SIDE: '#77d3ea',
+  },
 };

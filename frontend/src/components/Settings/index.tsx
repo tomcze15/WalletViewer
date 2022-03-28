@@ -3,6 +3,9 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { ToggleThemeButton, LanguageChanger, TitlePage } from 'components';
 
+import { Button } from 'components/Button';
+import { GrFormAdd } from 'react-icons/gr';
+
 const SettingsWrapper = styled.div`
   height: 100%;
   width: 100%;
