@@ -4,7 +4,7 @@ import styled, {
   ThemeProps,
 } from 'styled-components';
 
-import { IButton, IButtonAnim } from 'common/types';
+import { IButton, IButtonStyleProps } from 'common/types';
 
 const attachHover = (): FlattenInterpolation<ThemeProps<any>> => {
   return css`
@@ -22,7 +22,7 @@ const flexCenter = css`
   justify-content: center;
 `;
 
-const Container = styled.button<IButtonAnim>`
+const Container = styled.button<IButtonStyleProps>`
   height: 3rem;
   width: 10rem;
   border-radius: 12px;
@@ -76,8 +76,8 @@ const IconWrapper = styled.div`
   }
 `;
 
-export const Button = ({ Icon, children, onClick }: IButton) => (
-  <Container isAnim={Icon ? true : false} onClick={onClick}>
+export const Button = ({ Icon, children, type, onClick }: IButton) => (
+  <Container isAnim={Icon ? true : false} onClick={onClick} type={type}>
     <Text>{children}</Text>
     {Icon ? (
       <IconWrapper>
