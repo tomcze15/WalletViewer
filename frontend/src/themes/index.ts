@@ -30,6 +30,14 @@ const DarkTheme: ITheme = {
     },
   },
   globalBackground: COLORS.GLOBAL_BG_D,
+  button: {
+    sides: {
+      left: COLORS.DARK.BUTTON_L_SIDE,
+      right: COLORS.DARK.BUTTON_R_SIDE,
+    },
+    text: '',
+    icon: 'string',
+  },
 };
 
 const LightTheme: ITheme = {
@@ -61,6 +69,14 @@ const LightTheme: ITheme = {
     },
   },
   globalBackground: COLORS.GLOBAL_BG_L,
+  button: {
+    sides: {
+      left: COLORS.LIGHT.BUTTON_L_SIDE,
+      right: COLORS.LIGHT.BUTTON_R_SIDE,
+    },
+    text: '',
+    icon: 'string',
+  },
 };
 
 export { DarkTheme, LightTheme };

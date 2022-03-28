@@ -62,6 +62,14 @@ export interface ITheme extends DefaultTheme {
     };
   };
   globalBackground: string;
+  button: {
+    sides: {
+      left: string;
+      right: string;
+    };
+    text: string;
+    icon: string;
+  };
 }
 
 export interface IOption {
@@ -102,4 +110,14 @@ export interface ICreateWalletProps {
 
 export interface ITitlePageProps {
   title: string;
+}
+
+export interface IButton {
+  Icon?: SVGType;
+  children: string;
+  onClick?: () => void;
+}
+
+export interface IButtonAnim {
+  isAnim?: boolean;
 }
