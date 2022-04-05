@@ -30,10 +30,11 @@ import Card from 'components/Card';
 // `;
 
 export const CreateScreen = (props: ICreateWalletProps) => {
+  const test = "I'm tomcze15. ";
   return (
     <>
       <Card title="Create a wallet">
-        <Card.Body>Test</Card.Body>
+        <Card.Body>{test.repeat(1000)}</Card.Body>
       </Card>
       <br />
       <Card>

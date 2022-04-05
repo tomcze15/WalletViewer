@@ -10,9 +10,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.settings.languageChanger.background};
   border-radius: 21px;
   overflow: hidden;
-  // TMP
   width: 100%;
-  height: 21rem;
 `;
 
 const Title = styled.div`
@@ -27,9 +25,8 @@ const Title = styled.div`
 `;
 
 const BodyStyle = styled.div`
-  background-color: blue;
   width: inherit;
-  height: 400px;
+  height: 100%;
   border-radius: 21px;
   -moz-box-shadow: 0px 0px 30px ${({ theme }) => theme.menu.shadow};
   -webkit-box-shadow: 0px 0px 30px ${({ theme }) => theme.menu.shadow};
@@ -37,6 +34,7 @@ const BodyStyle = styled.div`
   background-color: ${({ theme }) =>
     theme.settings.languageChanger.item.background};
   overflow: hidden;
+  padding: 1rem;
 `;
 
 const Body: BodyComponent = ({ children }: ICardBody): JSX.Element => (
