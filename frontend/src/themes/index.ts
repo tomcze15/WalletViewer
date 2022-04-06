@@ -11,6 +11,10 @@ const DarkTheme: ITheme = {
     shadow: COLORS.SHADOW_BLACK,
     hover: COLORS.MENU_ITEM_BG_HOVER_D,
     icon: COLORS.ICON_D,
+    options: {
+      selected: COLORS.DARK.MENU.OPTIONS.SELECTED,
+      hover: COLORS.DARK.MENU.OPTIONS.HOVER,
+    },
   },
   settings: {
     toggleBtn: {
@@ -50,6 +54,10 @@ const LightTheme: ITheme = {
     shadow: COLORS.SHADOW_WHITE,
     hover: COLORS.MENU_ITEM_BG_HOVER_L,
     icon: COLORS.ICON_L,
+    options: {
+      selected: COLORS.LIGHT.MENU.OPTIONS.SELECTED,
+      hover: COLORS.LIGHT.MENU.OPTIONS.HOVER,
+    },
   },
   settings: {
     toggleBtn: {

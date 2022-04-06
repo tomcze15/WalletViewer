@@ -1,8 +1,10 @@
 import {
   IExtendedOption,
   ILanguageItem,
+  IMenuOption,
   IOption,
   Language,
+  MenuOption,
 } from 'common/types';
 import {
   WalletLogo,
@@ -55,34 +57,38 @@ export const MENU_BOTTOM: IOption = {
   Icon: Arrows,
 };
 
-export const MENU_OPTIONS: IExtendedOption[] = [
-  {
-    label: MENU_ITEM.DASHBOARD,
-    Icon: Dashboard,
-    href: MENU_OPTION_HREF.DASHBOARD,
-  },
-  {
-    label: MENU_ITEM.CHARTS,
-    Icon: Charts,
-    href: MENU_OPTION_HREF.CHARTS,
-  },
-  {
-    label: MENU_ITEM.WALLETS,
-    Icon: Wallet,
-    href: MENU_OPTION_HREF.WALLETS,
-  },
-  {
-    label: MENU_ITEM.SETTINGS,
-    Icon: Settings,
-    href: MENU_OPTION_HREF.SETTINGS,
-  },
-];
-
 export const WALLETS_OPTIONS: IExtendedOption[] = [
   {
     label: 'create wallet',
     Icon: CreatePlusCircle,
     href: '/wallets/create',
+  },
+];
+
+export const MENU_OPTIONS: IMenuOption[] = [
+  {
+    label: MENU_ITEM.DASHBOARD,
+    Icon: Dashboard,
+    href: MENU_OPTION_HREF.DASHBOARD,
+    type: MenuOption.DASHBOARD,
+  },
+  {
+    label: MENU_ITEM.CHARTS,
+    Icon: Charts,
+    href: MENU_OPTION_HREF.CHARTS,
+    type: MenuOption.CHARTS,
+  },
+  {
+    label: MENU_ITEM.WALLETS,
+    Icon: Wallet,
+    href: MENU_OPTION_HREF.WALLETS,
+    type: MenuOption.WALLETS,
+  },
+  {
+    label: MENU_ITEM.SETTINGS,
+    Icon: Settings,
+    href: MENU_OPTION_HREF.SETTINGS,
+    type: MenuOption.WALLETS,
   },
 ];
 

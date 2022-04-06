@@ -30,9 +30,21 @@ export default {
   LIGHT: {
     BUTTON_L_SIDE: '#1d2534',
     BUTTON_R_SIDE: '#668ec7',
+    MENU: {
+      OPTIONS: {
+        SELECTED: '#597caf',
+        HOVER: '#6086bc',
+      },
+    },
   },
   DARK: {
     BUTTON_L_SIDE: '#ffffff',
     BUTTON_R_SIDE: '#77d3ea',
+    MENU: {
+      OPTIONS: {
+        SELECTED: '#1f252e',
+        HOVER: '#2b333e',
+      },
+    },
   },
 };

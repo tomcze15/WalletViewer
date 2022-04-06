@@ -29,6 +29,14 @@ export enum Language {
   EN,
 }
 
+export enum MenuOption {
+  DASHBOARD,
+  CHARTS,
+  WALLETS,
+  SETTINGS,
+  UNKNOWN,
+}
+
 // ? Is this need
 export interface ILanguageItem {
   type: Language;
@@ -47,6 +55,10 @@ export interface ITheme extends DefaultTheme {
     shadow: string;
     hover: string;
     icon: string;
+    options: {
+      selected: string;
+      hover: string;
+    };
   };
   settings: {
     toggleBtn: {
@@ -85,9 +97,13 @@ export interface IExtendedOption extends IOption {
   href: string;
 }
 
+export interface IMenuOption extends IExtendedOption {
+  type: MenuOption;
+}
+
 export interface IMenuProps {
   header: IOption;
-  items: IExtendedOption[];
+  items: IMenuOption[];
   bottom: IOption;
 }
 

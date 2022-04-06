@@ -1,7 +1,7 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { MENU_OPTIONS, MENU_TOP, MENU_BOTTOM } from 'constants/items';
+import { MenuOption } from 'common/types';
 import MenuScreen from './MenuScreen';
 
 const Menu = (): JSX.Element => {
