@@ -1,0 +1,4 @@
+export const HTTP_STATUS = {
+  EMAIL_EXISTS: 409,
+  EMAIL_NOTEXISTS: 200,
+};
